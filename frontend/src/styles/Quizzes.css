@@ -1,0 +1,245 @@
+/* Quizzes.css - Public quizzes page */
+
+.quizzes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.quizzes-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.quizzes-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.quizzes-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.filters-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+.quizzes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.quiz-card-user {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-card-user:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.quiz-card-user .quiz-card-header {
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.quiz-card-user .quiz-card-header h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+}
+
+.quiz-card-user .difficulty-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgba(255,255,255,0.3);
+}
+
+.quiz-card-user .quiz-card-body {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.quiz-card-user .quiz-description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 48px;
+}
+
+.quiz-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+}
+
+.info-label {
+    font-weight: 500;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.info-value {
+    font-weight: 600;
+    color: #333;
+}
+
+.quiz-card-user .quiz-card-actions {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #eee;
+}
+
+.quiz-card-user .quiz-card-actions button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 2px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.quiz-count {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.loading, .error, .no-quizzes {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1.2rem;
+}
+
+.error {
+    color: #f44336;
+}
+
+.loading {
+    color: #666;
+}
+
+.no-quizzes {
+    background: white;
+    border-radius: 8px;
+    padding: 60px;
+    color: #999;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .quizzes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-controls {
+        flex-direction: column;
+    }
+
+    .quiz-card-user .quiz-card-actions {
+        flex-direction: column;
+    }
+}

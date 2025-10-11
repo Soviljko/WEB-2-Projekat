@@ -11,5 +11,6 @@
         public int LimitTime { get; set; } // Seconds
 
         public ICollection<Question> Questions { get; set; } = new List<Question>();
+        public ICollection<Result> Results { get; set; } = new List<Result>();
     }
 }

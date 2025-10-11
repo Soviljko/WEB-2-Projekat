@@ -14,6 +14,6 @@
         public User User { get; set; } // Participant
         public Quiz Quiz { get; set; } 
 
-        public ICollection<Answer> UserAnswers { get; set; } = new List<Answer>();
+        public ICollection<Answer> Answers { get; set; } = new List<Answer>();
     }
 }

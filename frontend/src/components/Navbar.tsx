@@ -27,6 +27,8 @@ const Navbar: React.FC = () => {
                 {token && (
                     <>
                         <Link to="/quizzes">Kvizovi</Link>
+                        <Link to="/leaderboard">Rang lista</Link>
+                        <Link to="/admin/quizzes">Admin Panel</Link>
                     </>
                 )}
             </div>

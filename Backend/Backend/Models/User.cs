@@ -9,5 +9,7 @@
         public string? ImagePath { get; set; }
 
         public string Role { get; set; } = "User"; // User is default
+
+        public ICollection<Result> Results { get; set; } = new List<Result>();
     }
 }

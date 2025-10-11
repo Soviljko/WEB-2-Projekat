@@ -12,6 +12,7 @@
         public Quiz Quiz { get; set; } = default!;
 
         public ICollection<Option> Options { get; set; } = new List<Option>();
+        public ICollection<Answer> Answers { get; set; } = new List<Answer>();
 
         public string? ExpectedAnswer { get; set; }
     }

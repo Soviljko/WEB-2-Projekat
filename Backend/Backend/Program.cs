@@ -42,6 +42,7 @@ namespace Backend
 
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IQuizService, QuizService>();
+            builder.Services.AddScoped<IResultService, ResultService>();
 
             //JWT Authentication
             builder.Services.AddAuthentication(options =>

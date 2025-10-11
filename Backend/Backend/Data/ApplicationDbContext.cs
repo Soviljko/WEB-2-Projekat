@@ -29,7 +29,7 @@ namespace Backend.Data
 
             modelBuilder.Entity<Answer>()
                 .HasOne(a => a.Result)
-                .WithMany(r => r.UserAnswers)
+                .WithMany(r => r.Answers)
                 .HasForeignKey(a => a.ResultId)
                 .OnDelete(DeleteBehavior.Restrict);
 
