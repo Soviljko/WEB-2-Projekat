@@ -5,6 +5,7 @@ import { login } from "../services/AuthService.ts";
 import { LoginDTO } from "../models/Auth.ts";
 import { useNavigate } from "react-router-dom";
 import { parseJwt } from "../utils/token.ts";
+import '../styles/Login.css';
 
 const Login: React.FC = () => {
     const [formData, setFormData] = useState<LoginDTO> ({

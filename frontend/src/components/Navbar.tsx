@@ -2,6 +2,12 @@
 
 import React from 'react';
 import { Link, useNavigate} from 'react-router-dom';
+import {jwtDecode} from 'jwt-decode';
+import '../styles/Navbar.css';
+
+interface DecodedToken {
+    'http://schemas.microsoft.com/ws/2008/06/identity/claims/role': string;
+}
 
 const Navbar: React.FC = () => {
 
@@ -9,15 +15,24 @@ const Navbar: React.FC = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        navigate('login');
+        navigate('/login');
     };
 
     const token = localStorage.getItem('token');
+    let userRole = '';
+
+    if (token) {
+        try {
+            const decoded = jwtDecode<DecodedToken>(token);
+            userRole = decoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+        } catch (error) {
+            console.error('Invalid token');
+        }
+    }
 
     return (
         <nav className='navbar'>
             <div className='navbar-links'>
-                <Link to="/">Pocetna</Link>
                 {!token && (
                     <>
                         <Link to="/login">Login</Link>
@@ -27,8 +42,14 @@ const Navbar: React.FC = () => {
                 {token && (
                     <>
                         <Link to="/quizzes">Kvizovi</Link>
+                        <Link to="/my-results">Moji rezultati</Link>
                         <Link to="/leaderboard">Rang lista</Link>
-                        <Link to="/admin/quizzes">Admin Panel</Link>
+                        {userRole === 'Admin' && (
+                            <>
+                                <Link to="/admin/quizzes">Admin Panel</Link>
+                                <Link to="/admin/results">Rezultati korisnika</Link>
+                            </>
+                        )}
                     </>
                 )}
             </div>

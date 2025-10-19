@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createQuiz, QuizCreateRequest, QuestionCreateRequest, OptionCreateRequest } from '../services/QuizService.ts';
+import '../styles/CreateQuiz.css';
 
 const CreateQuiz: React.FC = () => {
     const navigate = useNavigate();

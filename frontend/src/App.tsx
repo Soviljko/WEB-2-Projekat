@@ -39,22 +39,28 @@ import QuizDetails from './pages/QuizDetails.tsx';
 import TakeQuiz from './pages/TakeQuiz.tsx';
 import QuizResult from './pages/QuizResult.tsx';
 import Leaderboard from './pages/Leaderboard.tsx';
+import MyResults from './pages/MyResults.tsx';
+import AdminResults from './pages/AdminResults.tsx';
+import AdminDashboard from './pages/AdminDashboard.tsx';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />}/>
+        <Route path='/' element={<Login />}/>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/quizzes" element={<Quizzes />} />
         <Route path="/quiz/details/:id" element={<QuizDetails />} />
         <Route path="/quiz/take/:id" element={<TakeQuiz />} />
         <Route path="/result/:id" element={<QuizResult />} />
+        <Route path="/my-results" element={<MyResults />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/quizzes" element={<QuizList />} />
         <Route path="/admin/quiz/create" element={<CreateQuiz />} />
+        <Route path="/admin/results" element={<AdminResults />} />
       </Routes>
     </Router>
   );

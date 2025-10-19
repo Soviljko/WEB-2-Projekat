@@ -10,8 +10,6 @@
         public string? EnteredText { get; set; } // Textual answers
 
         public Result Result { get; set; }
-        public Question Question { get; set; }
-
-
+        public Question? Question { get; set; }
     }
 }

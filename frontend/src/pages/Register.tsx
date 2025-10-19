@@ -3,6 +3,7 @@
 import React, {useState} from "react";
 import { register } from "../services/AuthService.ts";
 import { RegisterDTO } from "../models/Auth.ts";
+import '../styles/Register.css';
 
 const Register: React.FC = () => {
     const[formData, setFormData] = useState<RegisterDTO>({
